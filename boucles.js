@@ -174,6 +174,9 @@ for(let i = 0 ; i < 10 ; i++) {
 console.log("Exercice 9");
 
 // Exercice 10 : écrire dans la console tous les résultats possibles de lancers de deux dés :
+for(let i = 0 ; i < 10 ; i++) {
+    console.log(i + (i%3)*100);
+}
 // 1 1
 // 1 2
 // 1 3
