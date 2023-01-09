@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<h2>Juste un bouton</h2>
+
+<p>Test Florent</p>
+
+<button id="myBtn">Try it</button>
+<p class="truc"></p>
+
+<script>
+let text=document.querySelector('.truc');
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+  text.innerText=Math.floor(Math.random() * 101);
+            
+  
+}
+</script>
+
+</body>
+</html>
