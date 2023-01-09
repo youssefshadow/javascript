@@ -75,4 +75,4 @@ function f9(nbr, name) {
         console.log(name);
     }
 }
-f9(70,"Florent");
+f9(70,"Florent est de toute beauté ");
