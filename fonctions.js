@@ -69,10 +69,14 @@ function f8bis(nbr1,nbr2,nbr3) {
         return nbr3
 }
 console.log(f8bis(7,8,9));
+//version modifié by Youssef, on utilisant que la fonction f7.
+console.log(f7(8,f7(3,2)));
+console.log(f7(8,f7(3,11)));
+
 // Écrire une fonction f9 qui prend un nombre et un mot en entrée, et qui affiche dans la console ce mot ce nombre de fois.
 function f9(nbr, name) {
     for(let i = 0 ; i < nbr ; i++) {
         console.log(name);
     }
 }
-f9(70,"Florent est de toute beauté ");
+f9(70,"Florent est Akainu ");
