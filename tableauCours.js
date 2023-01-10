@@ -26,3 +26,41 @@ console.log(tab);
 tab.length
 //Afficher dans la console la taille du tableau
 console.log(tab.length);
+
+
+
+/////exemple//////
+function displayMessage(age) {
+    if(age < 18) {
+        console.log("La personne est mineure.");
+    } else {
+        console.log("La personne est majeure.");
+    }
+}
+/*
+let age1 = 50;
+let age2 = 10;
+let age3 = 47;
+let age4 = 2;
+
+displayMessage(age1);
+displayMessage(age2);
+displayMessage(age3);
+displayMessage(age4);
+
+Pour i de 1 à 4 :
+    displayMessage(agei);
+*/
+
+let ages = [50,10,47,2];
+
+displayMessage(ages[0]);
+displayMessage(ages[1]);
+displayMessage(ages[2]);
+displayMessage(ages[3]);
+
+console.log("...");
+
+for(let i = 0 ; i < 4 ; i++) {
+    displayMessage(ages[i]);
+}
