@@ -52,13 +52,22 @@ function tab7(tableau, nbr) {
 }
 console.log(tab7(tabX,15));
 // [Bonus] Suite de l'exo : on **sait** que le tableau reçu est trié (on ne le vérifie pas). Comment exploiter cette information pour améliorer la recherche d'un élément ?
-function tab7Bonus(tableau,nbr) {
-    while (tableau[i] === nbr) {
-        return true;
+function tab7Bonus(tableau, nbr) {
+    let debut = 0;
+    let fin = tableau.length - 1;
+    while (debut <= fin) {
+        let milieu = Math.floor((debut + fin) / 2);
+        if (tableau[milieu] === nbr) {
+            return true;
+        } else if (tableau[milieu] < nbr) {
+            debut = milieu + 1;
+        } else {
+            fin = milieu - 1;
+        }
     }
     return false;
 }
-console.log(tab7Bonus(tabX,15));
+console.log(tab7Bonus(tabX,5));
 // Créer un tableau qui contient [1,2,3,...,7777].
 let tab8 = [];
 for (let i = 1; i <= 7777; i++) {
