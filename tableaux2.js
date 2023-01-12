@@ -15,7 +15,7 @@ function tab4(tableau) {
     return Math.min(...tableau);
 }
 // [Plus difficile - bonus] Écrire une fonction qui prend en entrée un tableau de nombres positifs et qui retourne la deuxième plus grande valeur du tableau.
-function tab5(tableau,) {
+function tab5(tableau) {
     let grande = tableau[0];
     let secondgrande = 0;
     for (let i = 1; i < tableau.length; i++) {
@@ -66,7 +66,7 @@ function tab7Bonus(tableau, nbr) {
         }
     }
     return false;
-}
+}       
 console.log(tab7Bonus(tabX,5));
 // Créer un tableau qui contient [1,2,3,...,7777].
 let tab8 = [];
@@ -76,11 +76,18 @@ for (let i = 1; i <= 7777; i++) {
 console.log(tab8.length);
 // Créer un tableau qui contient [10,20,30,...,77770].
 let tab9 = [];
-for (let i = 0; i <= 7777; i+=10) {
+for (let i = 10; i <= 77770; i+=10) {
     tab9.push(i);
 }
 console.log(tab9);
 // En se servant du tableau précédent, créer un tableau qui contient [5,10,15,...,38885].
+let tablo=[];
+for (let i = 0; i < 38886; i+=5) {
+    tablo.push(i);
+       
+    }
+
+console.log(tablo.length);
 tab10 = tab9.map(element => element/2);
 console.log(tab10);
 // Écrire une fonction qui prend un tableau en entrée et qui en supprime les dernières valeurs, tant qu'elles sont inférieures à 50.

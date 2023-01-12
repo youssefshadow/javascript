@@ -47,4 +47,4 @@ function hanoi(nbr,depart,inter,arriv) {
     hanoi(nbr-1,inter,depart,arriv);
   } 
 }
-hanoi(10,'gauche','milieu','droite');
+hanoi(3,'gauche','milieu','droite');

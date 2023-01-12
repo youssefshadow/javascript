@@ -14,13 +14,13 @@ function myFunction() {
     text.style.color = "blue";
     container.style.boxShadow =" 0px 5px 15px blue";
     msg.innerText="Modulo 3";
+    //alert('blue');
   } 
   else{
     text.style.color = "red";
     container.style.boxShadow =" 0px 5px 15px red";
     msg.innerText="";
   }
-
 
 }
 
