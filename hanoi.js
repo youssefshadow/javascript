@@ -6,17 +6,9 @@ Il y a 3 tours, et des disques sur l'une d'entre elles. On ne peut déplacer qu'
 Le but est d'écrire une fonction qui **affiche dans la console** la solution de ce problème.
 Exemple avec le code (obfusqué) plus bas :
 */
-function hanoi(nbr, source, target, inter) {
-  if (n > 0) {
-    hanoi(nbr-1, source, inter, target);
-    console.log(`Déplacer de ${source} vers ${target}`);
-    hanoi(nbr-1, inter, target, source);
-  }
-}
 
-hanoi(3,"un","trois","deux");
 
-hanoi(3,"un","trois","deux"); // Je demande : comment déplacer 3 disques de la tour "un" vers la tour "trois", avec la tour "deux" en intermédiaire.
+//hanoi(3,"un","trois","deux"); // Je demande : comment déplacer 3 disques de la tour "un" vers la tour "trois", avec la tour "deux" en intermédiaire.
 /*
 
      |            |            |
@@ -46,3 +38,13 @@ Le but n'est pas d'essayer de lire ce code ! :D
 =====!!!!!=====
 */
 //var _0x46d6=['Déplacer\x20de\x20','log'];(function(_0xc4e4ba,_0x67764c){var _0x46d64f=function(_0x5dd88d){while(--_0x5dd88d){_0xc4e4ba['push'](_0xc4e4ba['shift']());}};_0x46d64f(++_0x67764c);}(_0x46d6,0x8d));var _0x5dd8=function(_0xc4e4ba,_0x67764c){_0xc4e4ba=_0xc4e4ba-0x1ae;var _0x46d64f=_0x46d6[_0xc4e4ba];return _0x46d64f;};function hanoi(_0x52aa04,_0x48ecf8,_0x1a53ff,_0x5f2a2e){var _0x5208d9=_0x5dd8;_0x52aa04>0x0&&(hanoi(_0x52aa04-0x1,_0x48ecf8,_0x5f2a2e,_0x1a53ff),console[_0x5208d9(0x1ae)](_0x5208d9(0x1af)+_0x48ecf8+'\x20vers\x20'+_0x1a53ff),hanoi(_0x52aa04-0x1,_0x5f2a2e,_0x1a53ff,_0x48ecf8));}
+function hanoi(nbr,depart,inter,arriv) {
+  if (nbr==1) {
+    console.log(depart,'vers',arriv); 
+  }else{
+    hanoi(nbr-1,depart,arriv,inter);
+    console.log(depart,'vers',arriv);
+    hanoi(nbr-1,inter,depart,arriv);
+  } 
+}
+hanoi(10,'gauche','milieu','droite');
