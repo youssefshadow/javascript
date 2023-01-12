@@ -14,9 +14,8 @@ console.log(ordre(tabY,5));
 // Étape 2 : écrire une fonction qui reçoit un tableau et qui applique l'étape 1 sur toutes les cases successives (cases 0/1, cases 1/2, cases 2/3, ..., cases avant-dernière/dernière).
 function success(tableau) {
     for (let i = 0; i < tableau.length - 1; i++) {
-        for (let j = 0; j < tableau.length - 1 - i; j++) {
-            ordre(tableau, j);
-        }
+            ordre(tableau, i);
+        
     }
     return tableau;
 }
