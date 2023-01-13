@@ -1,4 +1,3 @@
-
 let text = document.querySelector('.truc');
 let container = document.querySelector('.container');
 let msg = document.querySelector('.msg');
