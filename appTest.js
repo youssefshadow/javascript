@@ -24,9 +24,11 @@ function myFunction() {
     container.style.boxShadow = "0px 5px 15px red";
     msg.innerText = "";
   }
+  //afficher les élément et les classer dans l'ordre
   numbers.push(number);
   numbers.sort((a, b) => a - b);
   affichage.innerText = numbers;
+  //imposer le retour à la ligne pour chaque affichage
   affichage.innerHTML = numbers.join('<br>');
 }
 
