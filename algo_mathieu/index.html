@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcul de moyenne</title>
+  <script>
+    function calculerMoyenne() {
+      const nombreEleves = parseInt(document.getElementById("nombreEleves").value);
+      let sommeNotes = 0;
+
+      for (let i = 1; i <= nombreEleves; i++) {
+        const note = parseFloat(document.getElementById(`note${i}`).value);
+        if (isNaN(note) || note < 0 || note > 20) {
+          alert(`Veuillez saisir une note valide pour l'élève ${i}.`);
+          return; 
+        } else {
+          sommeNotes += note;
+        }
+      }
+
+      const moyenne = sommeNotes / nombreEleves;
+      document.getElementById("moyenne").innerText = `La moyenne du devoir est de : ${moyenne.toFixed(2)}`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calcul de moyenne</h1>
+  <form>
+    <label for="nombreEleves">Nombre d'élèves :</label>
+    <input type="number" id="nombreEleves" name="nombreEleves">
+    <br>
+    <div id="notesContainer"></div>
+    <button type="button" onclick="calculerMoyenne()">Calculer la moyenne</button>
+  </form>
+  <p id="moyenne"></p>
+  <script>
+    document.getElementById("nombreEleves").addEventListener("input", function() {
+      const nombreEleves = parseInt(document.getElementById("nombreEleves").value);
+      const notesContainer = document.getElementById("notesContainer");
+      notesContainer.innerText = ""; 
+
+      for (let i = 1; i <= nombreEleves; i++) {
+        const input = document.createElement("input");
+        input.type = "number";
+        input.id = `note${i}`;
+        input.name = `note${i}`;
+        notesContainer.appendChild(input);
+        notesContainer.appendChild(document.createElement("br"));
+      }
+    });
+  </script>
+  <style>
+	body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+  input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+    button {
+		background-color: #4CAF50; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+    }
+
+    #moyenne {
+      font-weight: bold;
+	}
+  </style>
+</body>
+</html>
+
