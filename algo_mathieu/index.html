@@ -1,92 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calcul de moyenne</title>
-  <script>
-    function calculerMoyenne() {
-      const nombreEleves = parseInt(document.getElementById("nombreEleves").value);
-      let sommeNotes = 0;
-
-      for (let i = 1; i <= nombreEleves; i++) {
-        const note = parseFloat(document.getElementById(`note${i}`).value);
-        if (isNaN(note) || note < 0 || note > 20) {
-          alert(`Veuillez saisir une note valide pour l'élève ${i}.`);
-          return; 
-        } else {
-          sommeNotes += note;
-        }
-      }
-
-      const moyenne = sommeNotes / nombreEleves;
-      document.getElementById("moyenne").innerText = `La moyenne du devoir est de : ${moyenne.toFixed(2)}`;
-    }
-  </script>
+  <title>Calculateur de prix des chocolatines</title>
 </head>
 <body>
-  <h1>Calcul de moyenne</h1>
-  <form>
-    <label for="nombreEleves">Nombre d'élèves :</label>
-    <input type="number" id="nombreEleves" name="nombreEleves">
-    <br>
-    <div id="notesContainer"></div>
-    <button type="button" onclick="calculerMoyenne()">Calculer la moyenne</button>
-  </form>
-  <p id="moyenne"></p>
+  <h1>Calculateur de prix des chocolatines</h1>
+  <label for="quantite">Quantité de chocolatines :</label>
+  <input type="number" id="quantite" name="quantite">
+  <button onclick="calculerPrix()">Calculer</button>
+  <p id="resultat"></p>
+
   <script>
-    document.getElementById("nombreEleves").addEventListener("input", function() {
-      const nombreEleves = parseInt(document.getElementById("nombreEleves").value);
-      const notesContainer = document.getElementById("notesContainer");
-      notesContainer.innerText = ""; 
+    function calculerPrix() {
+      // La quantité de chocolatines
+      let quantite = parseInt(document.getElementById("quantite").value);
 
-      for (let i = 1; i <= nombreEleves; i++) {
-        const input = document.createElement("input");
-        input.type = "number";
-        input.id = `note${i}`;
-        input.name = `note${i}`;
-        notesContainer.appendChild(input);
-        notesContainer.appendChild(document.createElement("br"));
+      // Calcul du prix unitaire en fonction de la quantité
+      let prixUnitaire;
+      if (quantite <= 10) {
+        prixUnitaire = 1.4;
+      } else if (quantite <= 20) {
+        prixUnitaire = 1.3;
+      } else {
+        prixUnitaire = 1.2;
       }
-    });
+
+      let prixTotal = quantite * prixUnitaire;
+
+      // Affichage des résultats
+      let resultatElement = document.getElementById("resultat");
+      resultatElement.innerHTML = "Quantité de chocolatines : " + quantite + "<br>" +
+                                 "Prix unitaire : " + prixUnitaire + " € <br>" +
+                                 "Prix total à payer : " + prixTotal + " €";
+    }
   </script>
-  <style>
-	body {
-      font-family: Arial, sans-serif;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-  input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-    button {
-		background-color: #4CAF50; /* Green */
-		border: none;
-		color: white;
-		padding: 15px 32px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 16px;
-    }
-
-    #moyenne {
-      font-weight: bold;
-	}
-  </style>
 </body>
 </html>
-
