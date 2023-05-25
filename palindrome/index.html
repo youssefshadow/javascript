@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vérification de palindrome</title>
+    <script>
+      //   function maFonction() {
+      //     const chaine = document.querySelector("#chaine").value.toLowerCase();
+      //     const resultat = document.querySelector("#resultat");
+      //     const chaineClean = chaine.trim();
+
+      //     resultat.innerText =
+      //       chaineClean === chaineClean.split("").reverse().join("")
+      //         ? "Vrai!!!"
+      //         : "Faux.";
+      //   }
+      function estPalindrome(chaine) {
+        const chaineClean = chaine.toLowerCase().trim();
+        const longueur = chaineClean.length;
+
+        for (let i = 0; i < Math.floor(longueur / 2); i++) {
+          if (chaineClean[i] !== chaineClean[longueur - 1 - i]) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      function maFonction() {
+        const chaine = document.querySelector("#chaine").value;
+        const resultat = document.querySelector("#resultat");
+
+        if (estPalindrome(chaine)) {
+          resultat.innerText = "Vrai!!!";
+        } else {
+          resultat.innerText = "Faux.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Vérification de palindrome</h1>
+
+    <form onsubmit="event.preventDefault(); maFonction();">
+      <label for="chaine">Entrez une chaîne de caractères :</label>
+      <input type="text" id="chaine" name="chaine" required />
+      <button type="submit">Vérifier</button>
+    </form>
+
+    <div id="resultat"></div>
+  </body>
+</html>
